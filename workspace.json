@@ -1,5 +1,22 @@
 {
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
-  "projects": {}
+  "projects": {
+    "express-app-one": "apps/express-app-one",
+    "js-lib-one": "libs/js-lib-one",
+    "nest-app-one": "apps/nest-app-one",
+    "nest-lib-one": "libs/nest-lib-one",
+    "next-app-one": "apps/next-app-one",
+    "next-app-one-e2e": "apps/next-app-one-e2e",
+    "next-lib-one": "libs/next-lib-one",
+    "ng-app-one": "apps/ng-app-one",
+    "ng-app-one-e2e": "apps/ng-app-one-e2e",
+    "ng-lib-one": "libs/ng-lib-one",
+    "node-app-one": "apps/node-app-one",
+    "node-lib-one": "libs/node-lib-one",
+    "react-app-one": "apps/react-app-one",
+    "react-app-one-e2e": "apps/react-app-one-e2e",
+    "react-lib-one": "libs/react-lib-one",
+    "ws-lib-one": "libs/ws-lib-one"
+  }
 }

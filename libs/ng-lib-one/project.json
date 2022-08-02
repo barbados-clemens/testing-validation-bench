@@ -1,0 +1,27 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/ng-lib-one/src",
+  "prefix": "tvb",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/ng-lib-one"
+      ],
+      "options": {
+        "jestConfig": "libs/ng-lib-one/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/ng-lib-one/**/*.ts",
+          "libs/ng-lib-one/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

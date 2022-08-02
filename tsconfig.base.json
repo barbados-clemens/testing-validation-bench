@@ -14,7 +14,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@tvb/js-lib-one": ["libs/js-lib-one/src/index.ts"],
+      "@tvb/nest-lib-one": ["libs/nest-lib-one/src/index.ts"],
+      "@tvb/next-lib-one": ["libs/next-lib-one/src/index.ts"],
+      "@tvb/ng-lib-one": ["libs/ng-lib-one/src/index.ts"],
+      "@tvb/node-lib-one": ["libs/node-lib-one/src/index.ts"],
+      "@tvb/react-lib-one": ["libs/react-lib-one/src/index.ts"],
+      "@tvb/ws-lib-one": ["libs/ws-lib-one/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

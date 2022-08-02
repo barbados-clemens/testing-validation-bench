@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "testing-validation": {
+      "hosting": {
+        "ng-app-one": [
+          "testing-validation"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "testing-validation"
+  }
+}
