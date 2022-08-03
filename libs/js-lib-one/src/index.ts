@@ -1,1 +1,1 @@
-export * from './lib/js-lib-one';
+export * from './lib/firebase';

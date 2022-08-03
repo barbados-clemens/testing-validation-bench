@@ -7,5 +7,6 @@ export default {
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  transformIgnorePatterns: ['/node_modules/(?!nanoid/)'],
   coverageDirectory: '../../coverage/apps/react-app-one',
 };

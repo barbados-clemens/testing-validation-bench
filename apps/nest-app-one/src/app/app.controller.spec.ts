@@ -16,9 +16,11 @@ describe('AppController', () => {
   describe('getData', () => {
     it('should return "Welcome to nest-app-one!"', () => {
       const appController = app.get<AppController>(AppController);
-      expect(appController.getData()).toEqual({
-        message: 'Welcome to nest-app-one!',
-      });
+      expect(appController.getData()).toEqual(
+        expect.objectContaining({
+          message: 'Welcome to nest-app-one!',
+        })
+      );
     });
   });
 });
