@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import ReactLibOne from './react-lib-one';
+import D3Component from './d3.component';
 
-describe('ReactLibOne', () => {
+describe(D3Component.name, () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<ReactLibOne />);
+    const { baseElement } = render(<D3Component />);
     expect(baseElement).toBeTruthy();
   });
 });

@@ -1,1 +1,1 @@
-export * from './lib/react-lib-one';
+export * from './lib/d3.component';

@@ -1,4 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { D3Component } from '@tvb/react-lib-one';
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
 import { getApp } from '@tvb/js-lib-one';
@@ -17,6 +18,7 @@ function DbInfo() {
   });
   return (
     <>
+      <D3Component />
       <pre>{JSON.stringify(docs, null, 2)}</pre>
       <div>{id}</div>
     </>
