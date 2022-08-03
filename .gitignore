@@ -45,3 +45,4 @@ Thumbs.db
 *-debug.log
 .runtimeconfig.json
 benchmark*.json
+benchmark*.md
