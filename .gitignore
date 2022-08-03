@@ -46,3 +46,5 @@ Thumbs.db
 .runtimeconfig.json
 benchmark*.json
 benchmark*.md
+
+benchmark.html

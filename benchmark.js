@@ -1,9 +1,19 @@
 const ghActionCore = require('@actions/core');
 const cp = require('child_process');
+const fs = require('fs');
+const NUM_OF_RUNS = 10;
 
 function formatTable(results) {
   results.sort((a, b) => (a.mean > b.mean ? 1 : -1));
   const fastest = results[0];
+  const formatted = results.map((r) => [
+    `<code>${r.command}</code>`,
+    r.mean.toFixed(3),
+    r.min.toFixed(3),
+    r.max.toFixed(3),
+    (r.mean / fastest.mean).toFixed(2),
+  ]);
+
   return [
     [
       { data: 'command', header: true },
@@ -12,13 +22,7 @@ function formatTable(results) {
       { data: 'max', header: true },
       { data: 'relative', header: true },
     ],
-    ...results.map((r) => [
-      `\`${r.command}\``,
-      r.mean,
-      r.min,
-      r.max,
-      Number((r.mean / fastest.mean).toFixed(2)),
-    ]),
+    ...formatted,
   ];
 }
 
@@ -52,7 +56,7 @@ const commonCmds = [
 logIt('Starting w/o cache benchmarks');
 const noCacheArgs = [
   '-m',
-  1,
+  NUM_OF_RUNS,
   // clear jest cache before each run
   '-p',
   'npx jest --clear-cache',
@@ -67,7 +71,7 @@ run('hyperfine', noCacheArgs);
 logIt('Starting w/ cache benchmarks');
 const cachedArgs = [
   '-m',
-  1,
+  NUM_OF_RUNS,
   // warm jest cache before runs
   '-w',
   1,
@@ -82,21 +86,20 @@ run('hyperfine', cachedArgs);
 
 const withoutCacheResults = require('./benchmark-no-cache.json');
 const withCacheResults = require('./benchmark-cache.json');
+const summary = ghActionCore.summary
+  .addHeading('No cache', 2)
+  .addTable(formatTable(withoutCacheResults.results))
+  .addHeading('With cache', 2)
+  .addTable(formatTable(withCacheResults.results));
 
 if (process.env.GITHUB_STEP_SUMMARY) {
-  ghActionCore.summary
-    .addHeading('Benchmark results')
-    .addBreak()
-    .addHeading('No cache', 2)
-    .addCodeBlock(noCacheArgs.join(' '), 'bash')
-    .addTable(formatTable(withoutCacheResults.results))
-    .addHeading('With cache', 2)
-    .addTable(formatTable(withCacheResults.results))
+  summary
     .write()
     .then()
     .catch((err) => {
       console.error('Unable to write summary', err);
     });
 } else {
-  console.log('GITHUB_STEP_SUMMARY not set');
+  console.log('GITHUB_STEP_SUMMARY not set. Generating html');
+  fs.writeFileSync('benchmark.html', summary.stringify());
 }
