@@ -18,10 +18,31 @@ This project is aimed at providing examples on how to use common libraries with 
 ### [Nano Id](https://github.com/ai/nanoid)
 
 add nanoid to the transformIgnorePatterns patterns.
-react (babel-jest) also requires adding a preset to the root babel.config.json file.
+react (babel-jest) also requires adding a preset to the root babel.config.json file or the babel-jest transformer options.
 
 - [angular jest config](apps/ng-app-one/jest.config.ts)
-- [react jest config](apps/react-app-one/jest.config.ts) + [react root babel config](babel.config.json)
+- [react jest config](apps/react-app-one/jest.config.ts)
+
+```ts
+// project level jest.config.ts using babel-jest as a transformer
+
+'^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nrwl/next/babel'] }],
+```
+
+```json
+// babel.config.json (root of workspace)
+{
+  "babelrcRoots": ["*"],
+  "presets": [
+    [
+      "@nrwl/react/babel",
+      {
+        "runtime": "automatic"
+      }
+    ]
+  ]
+}
+```
 
 ### UUID (https://github.com/uuidjs/uuid)
 
@@ -30,6 +51,20 @@ should just work with the default jest configs
 ### Firebase (https://github.com/firebase/firebase-js-sdk)
 
 should just work with the default jest configs
+
+if not, make sure your root preset contains (which is included in the @nrwl/jest/preset)
+
+```js
+module.exports = {
+  // other stuff most likely nxPreset from @nrwl/jest/preset
+  testEnvironmentOptions: {
+    customExportConditions: ['node', 'require', 'default'],
+  },
+};
+```
+
+You can optionaly try the NX_JEST_RESOLVER_PACKAGES env var which will tell the nx resolver to remove any exports/module files from the node_modules package.json
+`NX_JEST_RESOLVER_PACKAGES=firebase,rxjs npx nx test my-cool-project`
 
 ### d3 (https://github.com/d3/d3)
 
@@ -60,6 +95,31 @@ export default {
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts', 'jest-canvas-mock'],
 };
 ```
+
+### Circular Reference JSON error from zone.js
+
+this is probably another error from within zone.js that jest cannot unwrap to display in the terminal.
+I've had luck returning the problematic tests via my editor (webstorm) and getting the actual error.
+
+example error from jest
+
+```shell
+TypeError: Converting circular structure to JSON
+  starting at object with constructor 'Zone
+  property '_zoneDelegate' object with constructor ' _ZoneDelegate'
+  property 'zone' closes the circle
+    at stringify (<anonymous>)
+    at messageParent (.. /../.. /node_modules/jest-worker/build/workers/messageParent.js:34:19)
+```
+
+the root issue was from a missing global API
+
+```shell
+Error: Uncaught (in promise): ReferenceError: FontFace is not defined
+ ReferenceError: FontFace is not defined
+```
+
+patching the global FontFace fixed it in this case.
 
 ## TODO
 
