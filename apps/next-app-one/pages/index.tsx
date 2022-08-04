@@ -1,3 +1,4 @@
+import { D3Component } from '@tvb/react-lib-one';
 import { collection, getDocs } from 'firebase/firestore';
 import { useState } from 'react';
 import { getApp } from '@tvb/js-lib-one';
@@ -16,6 +17,7 @@ export function Index() {
   });
   return (
     <>
+      <D3Component />
       <div className={styles.page}>nanoId: {nId}</div>
       <div className={styles.page}>UUID: {uId}</div>
       <pre>{JSON.stringify(docs, null, 2)}</pre>
