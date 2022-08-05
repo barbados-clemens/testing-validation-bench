@@ -136,13 +136,31 @@ If you wish to have testing-library/jest-dom globally avaiable then add the setu
 
 See this repos [root jest.preset.js](jest.preset.js) for an example
 
+### globally use coveragePathIgnorePatterns
+
+Set up the patterns in the [root jest.preset.js](jest.preset.js)
+
+You can comment/uncomment the coverage pattern in the root jest.preset.js and run `npx nx test js-lib-one --skip-nx-cache` to see it working.
+
+```js
+const nxPreset = require('@nrwl/jest/preset').default;
+
+module.exports = {
+  ...nxPreset,
+  coveragePathIgnorePatterns: ['no-coverage.ts'],
+};
+```
+
+![lower test coverage without the ignore path in the root preset](img/coverage-with-out-preset-change.png)
+
+![higher test coverage with the ignore path in the preset](img/coverage-with-preset-change.png)
+
 ## TODO
 
 ### Jest
 
 - [ ] add code examples for Okta
 - [ ] mock lib imports in app (https://github.com/nrwl/nx/issues/10029)
-- [ ] use coveragePathIgnorePatterns from root dir (https://github.com/nrwl/nx/issues/10477)
 - [ ] Merge code coverage reports together (https://github.com/nrwl/nx/issues/10423)
 - Libraries to add to the list:
   - [KY](https://www.npmjs.com/package/ky)

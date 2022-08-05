@@ -12,4 +12,6 @@ export default {
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../coverage/libs/js-lib-one',
+  coverageReporters: ['text-summary'],
+  // coveragePathIgnorePatterns: ['no-coverage.ts'],
 };
