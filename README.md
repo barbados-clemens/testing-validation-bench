@@ -121,6 +121,21 @@ Error: Uncaught (in promise): ReferenceError: FontFace is not defined
 
 patching the global FontFace fixed it in this case.
 
+### @testing-library/jest-dom
+
+1. install `@testing-library/jest-dom` and `@types/testing-library__jest-dom`
+2. add `@testing-library/jest-dom` types to your projects `tsconfig.spec.json`
+3. create a set up file such as `setup-jest-dom.js` next to your projects `jest.config.ts`.
+
+- or add to an existing setup file you already have such as test-setup.ts include in ng projects
+
+4. import (or require) `'@testing-library/jest-dom'` in your setup file.
+5. include the file in the `setupFilesAfterEnv` array `setupFilesAfterEnv: ['<rootDir>/setup-jest-dom.js']`
+
+If you wish to have testing-library/jest-dom globally avaiable then add the setupFilesAfterEnv option to your root jest.preset.js and resolve it's path via `path.resolve(__dirname, '<path to setup file>'),`
+
+See this repos [root jest.preset.js](jest.preset.js) for an example
+
 ## TODO
 
 ### Jest
@@ -131,7 +146,6 @@ patching the global FontFace fixed it in this case.
 - [ ] Merge code coverage reports together (https://github.com/nrwl/nx/issues/10423)
 - Libraries to add to the list:
   - [KY](https://www.npmjs.com/package/ky)
-  - [testing-library/jest-dom](https://www.npmjs.com/package/@testing-library/jest-dom) ref: https://github.com/nrwl/nx/issues/9140
 
 ### Cypress
 
