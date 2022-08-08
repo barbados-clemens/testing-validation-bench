@@ -1,0 +1,28 @@
+image: node:lts
+
+stages:
+  - test
+  - benchmark
+
+'.base':
+  interruptible: true
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+  before_script:
+    - npm ci
+  artifacts:
+    expire_in: 5 days
+    paths:
+      - node_modules
+
+test:
+  stage: test
+  extends: '.base'
+  script:
+    - echo -e "\e[31mRed Text\e[0m" && echo -e "\e[42mGreen Background\e[0m"
+    - npx jest --colors
+    - npm run validate
