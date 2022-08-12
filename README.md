@@ -63,9 +63,6 @@ module.exports = {
 };
 ```
 
-You can optionaly try the NX_JEST_RESOLVER_PACKAGES env var which will tell the nx resolver to remove any exports/module files from the node_modules package.json
-`NX_JEST_RESOLVER_PACKAGES=firebase,rxjs npx nx test my-cool-project`
-
 ### d3 (https://github.com/d3/d3)
 
 use a moduleNameMapper to point to the d3.min.js version instead of transpiling.
@@ -155,6 +152,25 @@ module.exports = {
 
 ![higher test coverage with the ignore path in the preset](img/coverage-with-preset-change.png)
 
+### Cypress env vars
+
+> [Cypress docs on env vars](https://docs.cypress.io/guides/guides/environment-variables)
+
+there are multiple ways to use env vars with cypress
+
+1. cli arguments `--env.SOME_API_KEY=<value>`
+2. [cypress.env.json](https://docs.cypress.io/guides/guides/environment-variables#Option-2-cypress-env-json)
+3. [env executor option](https://nx.dev/packages/cypress/executors/cypress#env)
+4. [.env file](https://nx.dev/guides/environment-variables#environment-variables)
+
+> I would recommend using cypress.env.json or the executor options.
+
+When using cli arguments, this will override any env executor options set in your projects config file.
+
+.env file requires a `CYPRESS_` prefix to be picked up by cypress
+
+You can see examples of these via the [ng-app-one-e2e](apps/ng-app-one-e2e) or [react-app-one-e2e](apps/react-app-one-e2e) projects.
+
 ## TODO
 
 ### Jest
@@ -168,6 +184,5 @@ module.exports = {
 
 ### Cypress
 
-- [ ] using env vars within cypress
 - [ ] static service FE app
 - [ ] in depth component tests (ref: https://github.com/nrwl/nx/issues/11372)
