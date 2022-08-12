@@ -1,0 +1,28 @@
+name: dte
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  main:
+    name: Nx Cloud - Main Job
+    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.6
+    with:
+      number-of-agents: 3
+      parallel-commands: |
+        npx nx-cloud record -- npx nx workspace-lint
+        npx nx-cloud record -- npx nx format:check
+        npx jest --clear-cache
+      parallel-commands-on-agents: |
+        npx nx e2e ng-app-one-e2e --skip-nx-cache --env.cliArg="i am from the cli args"
+        npx nx e2e react-app-one-e2e --skip-nx-cache
+        npx nx run-many --target=test --parallel=3 --all --ci --code-coverage --skip-nx-cache
+
+  agents:
+    name: Nx Cloud - Agents
+    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.6
+    with:
+      number-of-agents: 3
