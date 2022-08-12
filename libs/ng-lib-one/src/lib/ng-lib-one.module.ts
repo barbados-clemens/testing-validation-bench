@@ -5,5 +5,6 @@ import { D3Component } from './d3.component';
 @NgModule({
   declarations: [D3Component],
   imports: [CommonModule],
+  exports: [D3Component],
 })
 export class NgLibOneModule {}

@@ -17,4 +17,6 @@ jobs:
         with:
           fetch-depth: 0
       - run: npm ci
+      - run: npx nx e2e ng-app-one-e2e --env.cliArg="i am from the cli args"
+      - run: npx nx e2e react-app-one-e2e
       - run: npm run validate
