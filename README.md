@@ -164,6 +164,7 @@ module.exports = {
 - [ ] Merge code coverage reports together (https://github.com/nrwl/nx/issues/10423)
 - Libraries to add to the list:
   - [KY](https://www.npmjs.com/package/ky)
+  - [react-dnd](https://github.com/react-dnd/react-dnd)
 
 ### Cypress
 
