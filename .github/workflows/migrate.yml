@@ -1,21 +1,22 @@
-name: benchmark
+name: migrate
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *'
+#  schedule:
+#    - cron: '0 0 * * *'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  benchmark:
+  migrate:
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Install Hyperfine
-        run: brew install hyperfine
       - run: npm ci
-      - run: npm run benchmark
+      - run: npx ts-node ./tools/is-new-nx-release.ts
