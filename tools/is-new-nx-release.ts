@@ -91,7 +91,10 @@ function getNxVersions() {
 function makeMigrationSummary() {
   const text = require('../migrations.json')
     .migrations.map(
-      (mg: { name: string; description: string; package: string }, idx) => {
+      (
+        mg: { name: string; description: string; package: string },
+        idx: number
+      ) => {
         return `${idx + 1}. [${mg.package}] ${mg.description}\n`;
       }
     )
