@@ -48,3 +48,6 @@ benchmark*.json
 benchmark*.md
 
 benchmark.html
+
+# Next.js
+.next
