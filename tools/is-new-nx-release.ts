@@ -3,7 +3,7 @@ import { execSync } from 'child_process';
 import { unlinkSync } from 'fs';
 import { getOctokit } from '@actions/github';
 import { logger } from '@nrwl/devkit';
-const GHT = process.env.GITHUB_TOKEN;
+const GHT = process.env.GITHUB_TOKEN!;
 
 const { localVersion, latestVersion } = getNxVersions();
 
