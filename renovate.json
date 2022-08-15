@@ -1,6 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
+  "allowPostUpgradeCommandTemplating": true,
+  "allowedPostUpgradeCommands": [
+    "^npm ci --ignore-scripts$",
+    "^npx nx migrate"
+  ],
   "packageRules": [
     {
       "extends": ["monorepo:nrwl"],
@@ -8,9 +13,11 @@
       "matchUpdateTypes": ["digest", "patch", "minor", "major"],
       "postUpgradeTasks": {
         "commands": [
+          "npm ci --ignore-scripts",
           "npx nx migrate {{toVersion}}}",
           "npx nx migrate --run-migrations || 0"
-        ]
+        ],
+        "fileFilters": ["**/**"]
       }
     }
   ]
