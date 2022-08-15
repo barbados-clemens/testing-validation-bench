@@ -29,7 +29,7 @@ function formatTable(results) {
 function run(cmd, args) {
   return cp.spawnSync(cmd, args, {
     stdio: 'inherit',
-    env: { ...process.env, NX_TASKS_RUNNER_DYNAMIC_OUTPUT: 'false' },
+    env: { ...process.env, NX_TASKS_RUNNER_DYNAMIC_OUTPUT: 'false', NX_SKIP_NX_CACHE: true },
     cwd: process.cwd(),
   });
 }
@@ -39,50 +39,44 @@ function logIt(msg) {
   console.log(msg);
   console.log('-----------------------------------');
 }
-
-const commonArgs = [
-  '-L',
-  'jestArgs',
-  '--runInBand,--max-workers=3',
-  '-L',
-  'nxArgs',
-  '--parallel=false,--parallel=3',
-];
-const commonCmds = [
-  'npx nx run-many --target=test --all {jestArgs} {nxArgs} --skip-nx-cache',
-  'jest {jestArgs}',
-];
+const commands = [
+  'npx jest --run-in-band',
+  'npx nx run-many --target=test --all --parallel=false --run-in-band',
+  'npx jest --max-workers=1',
+  'npx nx run-many --target=test --all --parallel=false --max-workers=1',
+  'npx jest --max-workers=2',
+  'npx nx run-many --target=test --all --parallel=false --max-workers=2',
+  'npx nx run-many --target=test --all --parallel=2 --run-in-band',
+  'npx jest --max-workers=3',
+  'npx nx run-many --target=test --all --parallel=false --max-workers=3',
+  'npx nx run-many --target=test --all --parallel=3 --run-in-band',
+  'npx jest --max-workers=4',
+  'npx nx run-many --target=test --all --parallel=false --max-workers=4',
+  'npx nx run-many --target=test --all --parallel=4 --run-in-band'
+]
 
 logIt('Starting w/o cache benchmarks');
-const noCacheArgs = [
+
+run('hyperfine', [
   '-m',
   NUM_OF_RUNS,
   // clear jest cache before each run
   '-p',
   'npx jest --clear-cache',
-  // prep args for each run
-  ...commonArgs,
-  // run nx w/ args
-  ...commonCmds,
+  ...commands,
   '--export-json=benchmark-no-cache.json',
   '--export-markdown=benchmark-no-cache.md',
-];
-run('hyperfine', noCacheArgs);
+]);
 logIt('Starting w/ cache benchmarks');
-const cachedArgs = [
+run('hyperfine', [
   '-m',
   NUM_OF_RUNS,
-  // warm jest cache before runs
-  '-w',
-  1,
-  // prep args for each run
-  ...commonArgs,
-  // run nx w/ args
-  ...commonCmds,
+  // clear jest cache before each run
+  '-w', 1,
+  ...commands,
   '--export-json=benchmark-cache.json',
   '--export-markdown=benchmark-cache.md',
-];
-run('hyperfine', cachedArgs);
+]);
 
 const withoutCacheResults = require('./benchmark-no-cache.json');
 const withCacheResults = require('./benchmark-cache.json');
@@ -100,6 +94,6 @@ if (process.env.GITHUB_STEP_SUMMARY) {
       console.error('Unable to write summary', err);
     });
 } else {
-  console.log('GITHUB_STEP_SUMMARY not set. Generating html');
+  console.log('GITHUB_STEP_SUMMARY not set. Generating benchmark.html');
   fs.writeFileSync('benchmark.html', summary.stringify());
 }
