@@ -5,9 +5,7 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/ng-app-one",
         "index": "apps/ng-app-one/src/index.html",
@@ -19,9 +17,7 @@
           "apps/ng-app-one/src/favicon.ico",
           "apps/ng-app-one/src/assets"
         ],
-        "styles": [
-          "apps/ng-app-one/src/styles.scss"
-        ],
+        "styles": ["apps/ng-app-one/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -86,9 +82,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/ng-app-one"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/ng-app-one"],
       "options": {
         "jestConfig": "apps/ng-app-one/jest.config.ts",
         "passWithNoTests": true
