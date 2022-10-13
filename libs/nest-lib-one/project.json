@@ -5,20 +5,14 @@
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "libs/nest-lib-one/**/*.ts"
-        ]
+        "lintFilePatterns": ["libs/nest-lib-one/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/libs/nest-lib-one"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/libs/nest-lib-one"],
       "options": {
         "jestConfig": "libs/nest-lib-one/jest.config.ts",
         "passWithNoTests": true
