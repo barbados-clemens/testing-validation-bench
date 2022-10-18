@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { NgLibOneModule } from '@tvb/ng-lib-one';
+import { NgLibOneModule } from './ng-lib-one.module';
 import { D3Component } from './d3.component';
 
 describe(D3Component.name, () => {

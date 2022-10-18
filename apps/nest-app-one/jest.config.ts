@@ -1,10 +1,12 @@
 /* eslint-disable */
 export default {
+  rootDir: '../..',
+  roots: ['<rootDir>/apps/nest-app-one'],
   displayName: 'nest-app-one',
-  preset: '../../jest.preset.js',
+  preset: './jest.preset.js',
   globals: {
     'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json',
+      tsconfig: '<rootDir>/apps/nest-app-one/tsconfig.spec.json',
     },
   },
   testEnvironment: 'node',
@@ -12,5 +14,5 @@ export default {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/apps/nest-app-one',
+  coverageDirectory: './coverage/apps/nest-app-one',
 };

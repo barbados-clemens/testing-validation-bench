@@ -1,10 +1,12 @@
 /* eslint-disable */
 export default {
   displayName: 'node-lib-one',
-  preset: '../../jest.preset.js',
+  rootDir: '../..',
+  roots: ['<rootDir>/libs/node-lib-one'],
+  preset: './jest.preset.js',
   globals: {
     'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json',
+      tsconfig: '<rootDir>/libs/node-lib-one/tsconfig.spec.json',
     },
   },
   testEnvironment: 'node',
@@ -12,5 +14,5 @@ export default {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/node-lib-one',
+  coverageDirectory: './coverage/libs/node-lib-one',
 };

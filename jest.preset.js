@@ -4,7 +4,7 @@ module.exports = {
   ...nxPreset,
   setupFilesAfterEnv: [path.resolve(__dirname, './setup-testing-library.js')],
   moduleNameMapper: {
-    '^d3$': 'node_modules/d3/dist/d3.min.js',
+    '^d3$': '<rootDir>node_modules/d3/dist/d3.min.js',
   },
   // coveragePathIgnorePatterns: ['no-coverage.ts'],
 };

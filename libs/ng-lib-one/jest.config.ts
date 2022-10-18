@@ -1,15 +1,17 @@
 /* eslint-disable */
 export default {
+  rootDir: '../..',
+  roots: ['<rootDir>libs/ng-lib-one'],
   displayName: 'ng-lib-one',
-  preset: '../../jest.preset.js',
-  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
+  preset: './jest.preset.js',
+  setupFilesAfterEnv: ['<rootDir>libs/ng-lib-one/src/test-setup.ts'],
   globals: {
     'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json',
+      tsconfig: './libs/ng-lib-one/tsconfig.spec.json',
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/libs/ng-lib-one',
+  coverageDirectory: './coverage/libs/ng-lib-one',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

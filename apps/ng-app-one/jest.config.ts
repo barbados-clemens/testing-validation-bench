@@ -1,15 +1,17 @@
 /* eslint-disable */
 export default {
+  rootDir: '../..',
+  roots: ['<rootDir>/apps/ng-app-one'],
   displayName: 'ng-app-one',
-  preset: '../../jest.preset.js',
-  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
+  preset: './jest.preset.js',
+  setupFilesAfterEnv: ['<rootDir>/apps/ng-app-one/src/test-setup.ts'],
   globals: {
     'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json',
+      tsconfig: '<rootDir>/apps/ng-app-one/tsconfig.spec.json',
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/apps/ng-app-one',
+  coverageDirectory: './coverage/apps/ng-app-one',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

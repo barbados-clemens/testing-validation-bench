@@ -1,12 +1,14 @@
 /* eslint-disable */
 export default {
+  rootDir: '../..',
+  roots: ['<rootDir>/apps/next-app-one'],
   displayName: 'next-app-one',
-  preset: '../../jest.preset.js',
+  preset: './jest.preset.js',
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
     '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nrwl/next/babel'] }],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   transformIgnorePatterns: ['/node_modules/(?!nanoid/)'],
-  coverageDirectory: '../../coverage/apps/next-app-one',
+  coverageDirectory: './coverage/apps/next-app-one',
 };

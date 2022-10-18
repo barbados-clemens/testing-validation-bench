@@ -1,10 +1,12 @@
 /* eslint-disable */
 export default {
   displayName: 'node-app-one',
-  preset: '../../jest.preset.js',
+  rootDir: '../..',
+  roots: ['<rootDir>/apps/node-app-one'],
+  preset: './jest.preset.js',
   globals: {
     'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json',
+      tsconfig: '<rootDir>/apps/node-app-one/tsconfig.spec.json',
     },
   },
   testEnvironment: 'node',
@@ -12,5 +14,5 @@ export default {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/apps/node-app-one',
+  coverageDirectory: './coverage/apps/node-app-one',
 };
