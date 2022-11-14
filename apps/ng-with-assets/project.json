@@ -17,7 +17,11 @@
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/ng-with-assets/src/favicon.ico",
-          "apps/ng-with-assets/src/assets"
+          {
+            "input": "apps/ng-with-assets/src/assets",
+            "glob": "**/*",
+            "output": "assets"
+          }
         ],
         "styles": [
           "apps/ng-with-assets/src/styles.scss",
