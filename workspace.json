@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "ct-ng-lib": "libs/ct-ng-lib",
     "express-app-one": "apps/express-app-one",
     "js-lib-one": "libs/js-lib-one",
     "nest-app-one": "apps/nest-app-one",
@@ -12,6 +13,8 @@
     "ng-app-one": "apps/ng-app-one",
     "ng-app-one-e2e": "apps/ng-app-one-e2e",
     "ng-lib-one": "libs/ng-lib-one",
+    "ng-with-assets": "apps/ng-with-assets",
+    "ng-with-assets-e2e": "apps/ng-with-assets-e2e",
     "node-app-one": "apps/node-app-one",
     "node-lib-one": "libs/node-lib-one",
     "react-app-one": "apps/react-app-one",
