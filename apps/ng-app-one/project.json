@@ -1,4 +1,5 @@
 {
+  "name": "ng-app-one",
   "projectType": "application",
   "sourceRoot": "apps/ng-app-one/src",
   "prefix": "tvb",

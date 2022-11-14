@@ -1,4 +1,5 @@
 {
+  "name": "node-app-one",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/node-app-one/src",
   "projectType": "application",

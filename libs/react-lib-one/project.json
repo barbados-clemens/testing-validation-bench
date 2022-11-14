@@ -1,4 +1,5 @@
 {
+  "name": "react-lib-one",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/react-lib-one/src",
   "projectType": "library",

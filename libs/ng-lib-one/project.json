@@ -1,4 +1,5 @@
 {
+  "name": "ng-lib-one",
   "projectType": "library",
   "sourceRoot": "libs/ng-lib-one/src",
   "prefix": "tvb",
