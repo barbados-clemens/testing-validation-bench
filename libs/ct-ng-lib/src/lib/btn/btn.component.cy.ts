@@ -1,3 +1,4 @@
+import {TestBed} from '@angular/core/testing';
 import { MountConfig } from 'cypress/angular';
 import { BtnComponent } from './btn.component';
 
@@ -9,6 +10,7 @@ describe(BtnComponent.name, () => {
   }
 
   it('renders', () => {
-     cy.mount(BtnComponent, config);
+     TestBed.overrideComponent(BtnComponent, {add: { providers: config.providers}});
+cy.mount(BtnComponent, config);
   })
 })
