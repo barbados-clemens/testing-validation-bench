@@ -2,14 +2,14 @@
 
 Testing Validation Bench for nx testing plugins
 
-This project is aimed at providing examples on how to use common libraries with @nrwl/jest & @nrwl/cypress and will be used for validating changes within those plugin to catch any potential issues.
+This project is aimed at providing examples on how to use common libraries with @nrwl/jest & @nx/cypress and will be used for validating changes within those plugin to catch any potential issues.
 
 ## How to use
 
 `npm run validate` to run all the tests in the library without any cache
 
 > Note: [hyperfine](https://github.com/sharkdp/hyperfine) is required for benchmarks.
-> They don't really do much right now other than just run. future work will go into this to make sure @nrwl/jest and @nrwl/cypress are performant
+> They don't really do much right now other than just run. future work will go into this to make sure @nrwl/jest and @nx/cypress are performant
 
 `npm run benchmark` to run a benchmark of various different parameters for the test
 

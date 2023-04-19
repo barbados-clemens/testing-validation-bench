@@ -61,7 +61,6 @@
     "@cypress/webpack-dev-server": "^2.0.0",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.0.0",
-    "@nrwl/cypress": "16.0.0-beta.4",
     "@nrwl/eslint-plugin-nx": "16.0.0-beta.4",
     "@nrwl/express": "16.0.0-beta.4",
     "@nrwl/jest": "16.0.0-beta.4",
@@ -128,6 +127,7 @@
     "typescript": "~4.9.5",
     "url-loader": "^4.1.1",
     "webpack": "^5.75.0",
-    "webpack-merge": "^5.8.0"
+    "webpack-merge": "^5.8.0",
+    "@nx/cypress": "16.0.0-beta.4"
   }
 }
