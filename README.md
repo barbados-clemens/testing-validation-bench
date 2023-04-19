@@ -2,14 +2,14 @@
 
 Testing Validation Bench for nx testing plugins
 
-This project is aimed at providing examples on how to use common libraries with @nrwl/jest & @nx/cypress and will be used for validating changes within those plugin to catch any potential issues.
+This project is aimed at providing examples on how to use common libraries with @nx/jest & @nx/cypress and will be used for validating changes within those plugin to catch any potential issues.
 
 ## How to use
 
 `npm run validate` to run all the tests in the library without any cache
 
 > Note: [hyperfine](https://github.com/sharkdp/hyperfine) is required for benchmarks.
-> They don't really do much right now other than just run. future work will go into this to make sure @nrwl/jest and @nx/cypress are performant
+> They don't really do much right now other than just run. future work will go into this to make sure @nx/jest and @nx/cypress are performant
 
 `npm run benchmark` to run a benchmark of various different parameters for the test
 
@@ -52,11 +52,11 @@ should just work with the default jest configs
 
 should just work with the default jest configs
 
-if not, make sure your root preset contains (which is included in the @nrwl/jest/preset)
+if not, make sure your root preset contains (which is included in the @nx/jest/preset)
 
 ```js
 module.exports = {
-  // other stuff most likely nxPreset from @nrwl/jest/preset
+  // other stuff most likely nxPreset from @nx/jest/preset
   testEnvironmentOptions: {
     customExportConditions: ['node', 'require', 'default'],
   },
@@ -71,7 +71,7 @@ this can be in the root jest.preset.js or in the require projects jest.config.ts
 
 ```js
 // root jest.preset.js
-const nxPreset = require('@nrwl/jest/preset').default;
+const nxPreset = require('@nx/jest/preset').default;
 
 module.exports = {
   ...nxPreset,
@@ -140,7 +140,7 @@ Set up the patterns in the [root jest.preset.js](jest.preset.js)
 You can comment/uncomment the coverage pattern in the root jest.preset.js and run `npx nx test js-lib-one --skip-nx-cache` to see it working.
 
 ```js
-const nxPreset = require('@nrwl/jest/preset').default;
+const nxPreset = require('@nx/jest/preset').default;
 
 module.exports = {
   ...nxPreset,

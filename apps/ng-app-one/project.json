@@ -83,7 +83,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/ng-app-one"],
       "options": {
         "jestConfig": "apps/ng-app-one/jest.config.ts",

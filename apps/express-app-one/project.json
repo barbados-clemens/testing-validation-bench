@@ -48,7 +48,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/express-app-one"],
       "options": {
         "jestConfig": "apps/express-app-one/jest.config.ts",

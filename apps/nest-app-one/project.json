@@ -48,7 +48,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/nest-app-one"],
       "options": {
         "jestConfig": "apps/nest-app-one/jest.config.ts",
