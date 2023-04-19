@@ -61,7 +61,6 @@
     "@cypress/webpack-dev-server": "^2.0.0",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.0.0",
-    "@nrwl/node": "16.0.0-beta.4",
     "@nx/jest": "16.0.0-beta.4",
     "@nx/js": "16.0.0-beta.4",
     "@nx/nx-plugin": "16.0.0-beta.4",
@@ -127,6 +126,7 @@
     "@nx/react": "16.0.0-beta.4",
     "@nx/next": "16.0.0-beta.4",
     "@nx/express": "16.0.0-beta.4",
-    "@nx/nest": "16.0.0-beta.4"
+    "@nx/nest": "16.0.0-beta.4",
+    "@nx/node": "16.0.0-beta.4"
   }
 }
