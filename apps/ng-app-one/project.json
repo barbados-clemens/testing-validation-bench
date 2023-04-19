@@ -1,5 +1,6 @@
 {
   "name": "ng-app-one",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/ng-app-one/src",
   "prefix": "tvb",
@@ -73,7 +74,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": [
           "apps/ng-app-one/**/*.ts",

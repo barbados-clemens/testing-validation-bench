@@ -64,7 +64,6 @@
     "@nrwl/eslint-plugin-nx": "16.0.0-beta.4",
     "@nrwl/express": "16.0.0-beta.4",
     "@nrwl/jest": "16.0.0-beta.4",
-    "@nrwl/linter": "16.0.0-beta.4",
     "@nrwl/nest": "16.0.0-beta.4",
     "@nrwl/next": "16.0.0-beta.4",
     "@nrwl/node": "16.0.0-beta.4",
@@ -128,6 +127,7 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.75.0",
     "webpack-merge": "^5.8.0",
-    "@nx/cypress": "16.0.0-beta.4"
+    "@nx/cypress": "16.0.0-beta.4",
+    "@nx/linter": "16.0.0-beta.4"
   }
 }
