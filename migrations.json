@@ -139,9 +139,9 @@
     {
       "cli": "nx",
       "version": "16.0.0-beta.1",
-      "description": "Replace @nrwl/express with @nx/express",
+      "description": "Replace @nx/express with @nx/express",
       "implementation": "./src/migrations/update-16-0-0-add-nx-packages/update-16-0-0-add-nx-packages",
-      "package": "@nrwl/express",
+      "package": "@nx/express",
       "name": "update-16-0-0-add-nx-packages"
     },
     {
