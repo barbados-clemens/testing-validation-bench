@@ -68,7 +68,6 @@
     "@nrwl/nest": "16.0.0-beta.4",
     "@nrwl/next": "16.0.0-beta.4",
     "@nrwl/node": "16.0.0-beta.4",
-    "@nrwl/nx-cloud": "15.3.5",
     "@nrwl/react": "16.0.0-beta.4",
     "@nrwl/storybook": "16.0.0-beta.4",
     "@nrwl/web": "16.0.0-beta.4",
@@ -121,6 +120,7 @@
     "typescript": "4.8.4",
     "url-loader": "^4.1.1",
     "webpack": "^5.75.0",
-    "webpack-merge": "^5.8.0"
+    "webpack-merge": "^5.8.0",
+    "nx-cloud": "15.3.5"
   }
 }
