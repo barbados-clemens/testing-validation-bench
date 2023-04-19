@@ -22,7 +22,8 @@
       "@tvb/ng-lib-one": ["libs/ng-lib-one/src/index.ts"],
       "@tvb/node-lib-one": ["libs/node-lib-one/src/index.ts"],
       "@tvb/react-lib-one": ["libs/react-lib-one/src/index.ts"],
-      "@tvb/ws-lib-one": ["libs/ws-lib-one/src/index.ts"]
+      "@tvb/ws-lib-one": ["libs/ws-lib-one/src/index.ts"],
+      "tvb/workspace-plugin": ["tools/workspace-plugin/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
