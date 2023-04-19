@@ -65,7 +65,6 @@
     "@nrwl/eslint-plugin-nx": "16.0.0-beta.4",
     "@nrwl/express": "16.0.0-beta.4",
     "@nrwl/jest": "16.0.0-beta.4",
-    "@nrwl/js": "16.0.0-beta.4",
     "@nrwl/linter": "16.0.0-beta.4",
     "@nrwl/nest": "16.0.0-beta.4",
     "@nrwl/next": "16.0.0-beta.4",
