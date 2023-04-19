@@ -68,7 +68,6 @@
     "@nrwl/next": "16.0.0-beta.4",
     "@nrwl/node": "16.0.0-beta.4",
     "@nrwl/react": "16.0.0-beta.4",
-    "@nrwl/storybook": "16.0.0-beta.4",
     "@nrwl/web": "16.0.0-beta.4",
     "@nx/jest": "16.0.0-beta.4",
     "@nx/js": "16.0.0-beta.4",
@@ -128,6 +127,7 @@
     "webpack": "^5.75.0",
     "webpack-merge": "^5.8.0",
     "@nx/cypress": "16.0.0-beta.4",
-    "@nx/linter": "16.0.0-beta.4"
+    "@nx/linter": "16.0.0-beta.4",
+    "@nx/storybook": "16.0.0-beta.4"
   }
 }
