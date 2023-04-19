@@ -35,7 +35,7 @@ react (babel-jest) also requires adding a preset to the root babel.config.json f
   "babelrcRoots": ["*"],
   "presets": [
     [
-      "@nrwl/react/babel",
+      "@nx/react/babel",
       {
         "runtime": "automatic"
       }
