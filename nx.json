@@ -51,12 +51,6 @@
     "@nrwl/angular:component": {
       "style": "scss"
     },
-    "@nrwl/next": {
-      "application": {
-        "style": "scss",
-        "linter": "eslint"
-      }
-    },
     "@nx/react": {
       "application": {
         "style": "scss",
@@ -67,6 +61,12 @@
         "style": "scss"
       },
       "library": {
+        "style": "scss",
+        "linter": "eslint"
+      }
+    },
+    "@nx/next": {
+      "application": {
         "style": "scss",
         "linter": "eslint"
       }

@@ -26,7 +26,7 @@ react (babel-jest) also requires adding a preset to the root babel.config.json f
 ```ts
 // project level jest.config.ts using babel-jest as a transformer
 
-'^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nrwl/next/babel'] }],
+'^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nx/next/babel'] }],
 ```
 
 ```json
