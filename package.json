@@ -71,7 +71,6 @@
     "@nrwl/react": "16.0.0-beta.4",
     "@nrwl/storybook": "16.0.0-beta.4",
     "@nrwl/web": "16.0.0-beta.4",
-    "@nrwl/workspace": "16.0.0-beta.4",
     "@octokit/action": "^4.0.4",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@schematics/angular": "~15.1.0",
@@ -121,6 +120,7 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.75.0",
     "webpack-merge": "^5.8.0",
-    "nx-cloud": "15.3.5"
+    "nx-cloud": "15.3.5",
+    "@nx/workspace": "16.0.0-beta.4"
   }
 }
