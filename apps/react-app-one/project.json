@@ -22,8 +22,7 @@
         ],
         "styles": ["apps/react-app-one/src/styles.scss"],
         "scripts": [],
-        "webpackConfig": "apps/react-app-one/webpack.config.js",
-        "isolatedConfig": true
+        "webpackConfig": "@nx/react/plugins/webpack"
       },
       "configurations": {
         "development": {
