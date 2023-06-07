@@ -1,11 +1,12 @@
 {
   "name": "ng-lib-one",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/ng-lib-one/src",
   "prefix": "tvb",
   "targets": {
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/ng-lib-one"],
       "options": {
         "jestConfig": "libs/ng-lib-one/jest.config.ts",
@@ -13,7 +14,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": [
           "libs/ng-lib-one/**/*.ts",
